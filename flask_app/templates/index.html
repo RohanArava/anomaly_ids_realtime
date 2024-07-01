@@ -6,89 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        .wrap {
+            display: grid;
+            width: 80%;
+            margin: auto;
+            column-gap: 1em;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            border: 1px solid #ddd;
-            /* border color */
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
         }
-        .wrap{
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            column-gap: 1em;
-        }
+
         th,
         td {
-            padding: 8px;
+            padding: 12px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
-            /* border color for rows */
+            border-bottom: none;
         }
 
         th {
-            background-color: #f2f2f2;
-            /* background color for header row */
+            background-color: #333;
+            color: #f2f2f2;
         }
 
         tr:nth-child(even) {
-            background-color: #f9f9f9;
-            /* alternate row background color */
+            background-color: #2a2a2a;
         }
 
-        /* Optional: Hover effect */
+        tr:nth-child(odd) {
+            background-color: #1f1f1f;
+        }
+
         tr:hover {
-            background-color: #f1f1f1;
-            /* hover background color */
+            background-color: #444;
         }
     </style>
 </head>
 
 <body>
     <h2>Anomaly based IDS</h2>
-    <p>S20210010008, S20210010028 & S20210010204</p>
     <div class="wrap">
         <div>
-        <table>
-            <tr>
-                <th>request</th>
-                <th>from</th>
-                <th>to</th>
-                <th>type</th>
-            </tr>
-            {% for request in requests %}
-            <tr>
-                <td>
-                    {% for req in request[0] %}
-                    {{req}},
-                    {% endfor %}
-                </td>
-                <td>
-                    {{request[1]}}
-                </td>
-                <td>
-                    {{request[2]}}
-                </td>
-                <td>
-                    {{request[3]}}
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-        <div>
-            <label for="data">Data:</label>
-            <textarea rows="4" id="req" style="width: 100%;" ></textarea> : <pre id="res"></pre>
-            <button id="getResult">Get result</button>
+            <table>
+                <tr>
+                    <th>request</th>
+                    <th>from</th>
+                    <th>to</th>
+                    <th>type</th>
+                </tr>
+                {% for request in requests %}
+                <tr>
+                    <td>
+                        {% for req in request[0] %}
+                        {{req}},
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {{request[1]}}
+                    </td>
+                    <td>
+                        {{request[2]}}
+                    </td>
+                    <td>
+                        {{request[3]}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
     <script>
-        
-        console.log(req)
-        let res = document.getElementById("res")
-        document.getElementById("getResult").addEventListener("click", async (e)=>{
-            let req = document.getElementById("req").value
-            fetch(`/direct/${req}`).then((res)=>res.json()).then((body)=>res.innerText = body.type)
-        })
     </script>
 </body>
 

@@ -1,12 +1,17 @@
+# Realtime Intrusion Detection System Using Deep Learning
+
+This application can monitor live network activity in your system and predict anomalies in the network behaviour.
+
 to run:  
 ```
 sudo python3 main.py  
 ```
-In another terminal:  
+In another terminal, run:  
 ```
 cd ./flask_app
 flask --app main.py run -h 0.0.0.0  
 ```
 Open browser and navigate to localhost:5000  
-Browse something in another browser (from this host) and refresh the flask page
+Browse the internet in the same device and refresh the flask app
+
 ![Screenshot](screenshot.png)
