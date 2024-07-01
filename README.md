@@ -1,4 +1,4 @@
-# Realtime Intrusion Detection System Using Deep Learning
+# Real-time Intrusion Detection System Using Deep Learning
 
 This application can monitor live network activity in your system and predict anomalies in the network behaviour.
 
