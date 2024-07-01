@@ -15,3 +15,9 @@ Open browser and navigate to localhost:5000
 Browse the internet in the same device and refresh the flask app
 
 ![Screenshot](screenshot.png)
+
+
+Tested on Ubuntu 20.04
+
+For more on IDS, refer [https://github.com/RohanArava/IDS-using-Federated-Reinforcement-Learning](https://github.com/RohanArava/IDS-using-Federated-Reinforcement-Learning)
+
